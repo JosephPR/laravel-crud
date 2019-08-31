@@ -96,7 +96,7 @@ class LearnController extends Controller
           'email' => $request->email,
         ];
       }
-      
+
       $update = User::find($id)->update($user);
       if($update)
       return redirect('users');
@@ -112,6 +112,18 @@ class LearnController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+      $user = User::find($id);
+      if($user){
+          $user->destroy($id);
+          $msg = 'User Deleted';
+        }
+      else
+      {
+          $msg = 'User Deleted really';
+      }
+      return redirect()
+      ->back()
+      ->withSuccess($msg);
     }
 }

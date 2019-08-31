@@ -3,7 +3,9 @@
   <center>
     <h3>CRUD NEW USER</h3>
   </center>
-
+    @if (Session::has('success'))
+      <h3>{{ Session::get('success')}}</h3>
+    @endif
   <div class='row'>
     <div class='col-md-12'>
       <div class='table-responsive'>
