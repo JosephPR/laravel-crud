@@ -11,13 +11,13 @@
       <div class='table-responsive'>
         <table class="table table-hover table-bordered">
           <thead>
-            <tr>
+            <tr class="table-names">
               <th width="5">No</th>
               <th>Name</th>
               <th>Email</th>
               <th>
-                <a href="{{ URL('users/create')}}" class="btn btn-success btn-xs">
-                  NEW
+                <a href="{{ URL('users/create')}}" class="btn btn-outline-success new btn-xs">
+                  NEW USER
                 </a>
               </th>
             </tr>
@@ -29,13 +29,14 @@
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
               <td>
-                <center>
+                <center class="buttons">
                   <a href="{{URL('users/' . $user->id . '/edit')}}"
-                     class='btn btn-xs btn-info'>Edit</a>
+                     id="edit-button" class='btn btn-xs btn-outline-info'>Edit</a>
+
                   <form action="{{URL('users/' . $user->id)}}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-xs btn-outline-danger">Delete</button>
 
                   </form>
                 </center>

@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    
                     <a href='{{ URL('users')}}' class='btn btn-sm btn-primary'>New User</a>
             </div>
         </div>
